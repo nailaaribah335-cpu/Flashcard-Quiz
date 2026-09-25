@@ -1,0 +1,68 @@
+import '../models/flashcard.dart';
+
+final List<Flashcard> defaultFlashcards = [
+  const Flashcard(
+    id: '1',
+    category: 'Flutter Basics',
+    question: 'Apa perbedaan mendasar antara StatelessWidget dan StatefulWidget?',
+    answer: 'StatelessWidget bersifat immutable (tidak memiliki state internal yang berubah), sedangkan StatefulWidget memiliki State object mutable yang dapat memperbarui UI saat dipanggil setState().',
+    explanation: 'Gunakan StatelessWidget untuk tampilan statis (teks, ikon) dan StatefulWidget saat data atau UI dapat berubah secara interaktif.',
+    hint: 'Pikirkan tentang mutabilitas dan pemanggilan setState().',
+  ),
+  const Flashcard(
+    id: '2',
+    category: 'UI & Design',
+    question: 'Widget apa di Flutter yang digunakan untuk menghasilkan efek blur pada Glassmorphism?',
+    answer: 'BackdropFilter yang dikombinasikan dengan ImageFilter.blur(sigmaX: ..., sigmaY: ...).',
+    explanation: 'BackdropFilter menerapkan filter grafis ke area di bawah widget anaknya, biasanya dibungkus dengan ClipRRect agar sudut blur melengkung rapi.',
+    hint: 'Widget ini membutuhkan ImageFilter dari dart:ui.',
+  ),
+  const Flashcard(
+    id: '3',
+    category: 'Dart Language',
+    question: 'Apa fungsi tanda tanya (?) setelah tipe data di Dart (Null Safety)?',
+    answer: 'Menandakan bahwa variabel tersebut nullable, artinya dapat bernilai null.',
+    explanation: 'Dart memberlakukan Sound Null Safety di mana secara default variabel tidak boleh bernilai null kecuali ditandai eksplisit dengan `?`.',
+    hint: 'Terkait dengan fitur Sound Null Safety di Dart modern.',
+  ),
+  const Flashcard(
+    id: '4',
+    category: 'Flutter Layout',
+    question: 'Widget apa yang digunakan untuk menumpuk widget satu di atas widget lainnya?',
+    answer: 'Stack',
+    explanation: 'Stack memungkinkan penempatan elemen layer berlapis, sering dipadukan dengan Positioned atau Align untuk efek visual seperti background orbs.',
+    hint: 'Sering dipasangkan dengan widget Positioned.',
+  ),
+  const Flashcard(
+    id: '5',
+    category: 'Flutter State',
+    question: 'Mengapa kita tidak boleh memanggil setState() di dalam method build()?',
+    answer: 'Karena akan memicu infinite loop (re-render terus menerus) dan menyebabkan exception/freeze pada aplikasi.',
+    explanation: 'Method build() dieksekusi setiap kali framework merender UI. Memanggil setState() di dalamnya akan meminta build() lagi tanpa henti.',
+    hint: 'Bisa menimbulkan loop yang tidak pernah berhenti.',
+  ),
+  const Flashcard(
+    id: '6',
+    category: 'UI & Design',
+    question: 'Sebutkan 3 karakteristik utama gaya desain Glassmorphism!',
+    answer: '1. Efek frosted glass/blur (BackdropFilter).\n2. Latar belakang semi-transparan dengan border tipis terang.\n3. Warna latar cerah/gradasi dengan ornamen bentuk melayang.',
+    explanation: 'Glassmorphism memberikan ilusi kedalaman (depth) seperti lembaran kaca buram yang berada di atas elemen warna-warni.',
+    hint: 'Fokus pada transparansi, blur, dan efek multi-layer.',
+  ),
+  const Flashcard(
+    id: '7',
+    category: 'Dart Language',
+    question: 'Apa perbedaan antara kata kunci final dan const pada Dart?',
+    answer: 'final diinisialisasi saat runtime dan hanya dapat diisi satu kali, sedangkan const diinisialisasi saat compile-time.',
+    explanation: 'Semua nilai const otomatis merupakan final, namun tidak semua nilai final merupakan compile-time constant.',
+    hint: 'Satu runtime, satu compile-time.',
+  ),
+  const Flashcard(
+    id: '8',
+    category: 'Flutter Basics',
+    question: 'Apa fungsi dari method initState() pada State object di Flutter?',
+    answer: 'Untuk inisialisasi satu kali saat widget pertama kali dimasukkan ke dalam widget tree.',
+    explanation: 'initState() ideal untuk menginisialisasi controller (misal AnimationController), mendaftarkan listener, atau memuat data awal.',
+    hint: 'Dijalankan tepat satu kali sebelum method build().',
+  ),
+];
